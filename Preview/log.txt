@@ -1,0 +1,35 @@
+++++++++++++2017-11-17 16:29:03.785737+++++++++++++
+['D:\\Learning\\python\\ProgrammingPython', 'D:\\Learning\\python\\ProgrammingPython\\Preview\\cgi-bin', 'C:\\Python34\\lib\\site-packages\\pip-9.0.1-py3.4.egg', 'D:\\Learning\\python\\cfgdir', 'C:\\Windows\\system32\\python34.zip', 'C:\\Python34\\DLLs', 'C:\\Python34\\lib', 'C:\\Python34', 'C:\\Python34\\lib\\site-packages']
+FieldStorage(None, None, [MiniFieldStorage('key', 'bob'), MiniFieldStorage('action', 'Fetch')])
+++++++++++++2017-11-17 16:31:13.262143+++++++++++++
+['D:\\Learning\\python\\ProgrammingPython', 'D:\\Learning\\python\\ProgrammingPython\\Preview\\cgi-bin', 'C:\\Python34\\lib\\site-packages\\pip-9.0.1-py3.4.egg', 'D:\\Learning\\python\\cfgdir', 'C:\\Windows\\system32\\python34.zip', 'C:\\Python34\\DLLs', 'C:\\Python34\\lib', 'C:\\Python34', 'C:\\Python34\\lib\\site-packages']
+FieldStorage(None, None, [MiniFieldStorage('key', 'bob'), MiniFieldStorage('action', 'Fetch')])
+---------------------fetch--------------
+++++++++++++2017-11-17 16:32:36.741917+++++++++++++
+['D:\\Learning\\python\\ProgrammingPython', 'D:\\Learning\\python\\ProgrammingPython\\Preview\\cgi-bin', 'C:\\Python34\\lib\\site-packages\\pip-9.0.1-py3.4.egg', 'D:\\Learning\\python\\cfgdir', 'C:\\Windows\\system32\\python34.zip', 'C:\\Python34\\DLLs', 'C:\\Python34\\lib', 'C:\\Python34', 'C:\\Python34\\lib\\site-packages']
+FieldStorage(None, None, [MiniFieldStorage('key', 'bob'), MiniFieldStorage('name', "'?'"), MiniFieldStorage('age', "'?'"), MiniFieldStorage('job', "'?'"), MiniFieldStorage('pay', "'?'"), MiniFieldStorage('action', 'Fetch')])
+---------------------fetch--------------
+No module named 'person'
+++++++++++++2017-11-17 16:34:26.316185+++++++++++++
+['D:\\Learning\\python\\ProgrammingPython', 'D:\\Learning\\python\\ProgrammingPython\\Preview\\cgi-bin', 'C:\\Python34\\lib\\site-packages\\pip-9.0.1-py3.4.egg', 'D:\\Learning\\python\\cfgdir', 'C:\\Windows\\system32\\python34.zip', 'C:\\Python34\\DLLs', 'C:\\Python34\\lib', 'C:\\Python34', 'C:\\Python34\\lib\\site-packages']
+FieldStorage(None, None, [MiniFieldStorage('key', 'bob'), MiniFieldStorage('name', "'?'"), MiniFieldStorage('age', "'?'"), MiniFieldStorage('job', "'?'"), MiniFieldStorage('pay', "'?'"), MiniFieldStorage('action', 'Fetch')])
+---------------------fetch--------------
+-------
+No module named 'person'
+-----------
+++++++++++++2017-11-17 16:36:16.808505+++++++++++++
+['D:\\Learning\\python\\ProgrammingPython\\Preview', 'D:\\Learning\\python\\ProgrammingPython\\Preview\\cgi-bin', 'C:\\Python34\\lib\\site-packages\\pip-9.0.1-py3.4.egg', 'D:\\Learning\\python\\cfgdir', 'C:\\Windows\\system32\\python34.zip', 'C:\\Python34\\DLLs', 'C:\\Python34\\lib', 'C:\\Python34', 'C:\\Python34\\lib\\site-packages']
+FieldStorage(None, None, [MiniFieldStorage('key', 'bob'), MiniFieldStorage('name', "'?'"), MiniFieldStorage('age', "'?'"), MiniFieldStorage('job', "'?'"), MiniFieldStorage('pay', "'?'"), MiniFieldStorage('action', 'Fetch')])
+---------------------fetch--------------
+++++++++++++2017-11-17 16:36:47.720273+++++++++++++
+['D:\\Learning\\python\\ProgrammingPython\\Preview', 'D:\\Learning\\python\\ProgrammingPython\\Preview\\cgi-bin', 'C:\\Python34\\lib\\site-packages\\pip-9.0.1-py3.4.egg', 'D:\\Learning\\python\\cfgdir', 'C:\\Windows\\system32\\python34.zip', 'C:\\Python34\\DLLs', 'C:\\Python34\\lib', 'C:\\Python34', 'C:\\Python34\\lib\\site-packages']
+FieldStorage(None, None, [MiniFieldStorage('key', 'bob'), MiniFieldStorage('name', "'Bob Smith'"), MiniFieldStorage('age', '47'), MiniFieldStorage('job', "'software'"), MiniFieldStorage('pay', '30000'), MiniFieldStorage('action', 'Update')])
+--------------------update---------------
+++++++++++++2017-11-17 16:38:41.911804+++++++++++++
+['D:\\Learning\\python\\ProgrammingPython\\Preview', 'D:\\Learning\\python\\ProgrammingPython\\Preview\\cgi-bin', 'C:\\Python34\\lib\\site-packages\\pip-9.0.1-py3.4.egg', 'D:\\Learning\\python\\cfgdir', 'C:\\Windows\\system32\\python34.zip', 'C:\\Python34\\DLLs', 'C:\\Python34\\lib', 'C:\\Python34', 'C:\\Python34\\lib\\site-packages']
+FieldStorage(None, None, [MiniFieldStorage('key', 'sue'), MiniFieldStorage('name', "'Bob Smith'"), MiniFieldStorage('age', '42'), MiniFieldStorage('job', "'software'"), MiniFieldStorage('pay', '30000'), MiniFieldStorage('action', 'Fetch')])
+---------------------fetch--------------
+++++++++++++2017-11-17 16:38:47.154104+++++++++++++
+['D:\\Learning\\python\\ProgrammingPython\\Preview', 'D:\\Learning\\python\\ProgrammingPython\\Preview\\cgi-bin', 'C:\\Python34\\lib\\site-packages\\pip-9.0.1-py3.4.egg', 'D:\\Learning\\python\\cfgdir', 'C:\\Windows\\system32\\python34.zip', 'C:\\Python34\\DLLs', 'C:\\Python34\\lib', 'C:\\Python34', 'C:\\Python34\\lib\\site-packages']
+FieldStorage(None, None, [MiniFieldStorage('key', 'tom'), MiniFieldStorage('name', "'Sue Jones'"), MiniFieldStorage('age', '32'), MiniFieldStorage('job', "'hardware'"), MiniFieldStorage('pay', '40000'), MiniFieldStorage('action', 'Fetch')])
+---------------------fetch--------------
