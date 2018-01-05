@@ -1,0 +1,4 @@
+from tkinter import *
+root = Tk()
+Label(root, text='Hello Gui World').pack(side=LEFT)
+root.mainloop()

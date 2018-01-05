@@ -1,0 +1,5 @@
+Hello stream world!
+Enter a number:34.000000 squared is 1156.000000
+Enter a number:23.000000 squared is 529.000000
+Enter a number:11.000000 squared is 121.000000
+Enter a number:Bye
