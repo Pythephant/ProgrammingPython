@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+<title>深港通</title>
+</head>
+<body>
+<div id="main">
+<!--object classid="clsid:29B56A3F-A405-46C1-9F35-7427424E05D9" width="361" height="75">
+<param name="Name" value="e3webpart:includefile">
+<param name="Property" value="PHdhZjp3ZWJQYXJ0IHR5cGU9ImluY2x1ZGVmaWxlIiBmaWxlcGF0aD0iIVtDREFUQVs0NywxMDks
+OTcsMTA1LDExMCw0NywxMTUsMTIyLDEwNCwxMDcsNDcsMTA1LDExMCw5OSwxMDgsMTE3LDEwMCwx
+MDEsNDcsMTE1LDEyMiwxMDQsMTA3LDk1LDk5LDExNSwxMTUsNDYsMTA0LDExNiwxMDksMTA4XV0i
+IGluY2x1ZGV0eXBlPSJhdXRvIiB2dGV0ZW1wbGF0ZWlkPSIzMzAiIFZURV9PQkpfV0lEVEg9IjM2
+MSIgVlRFX09CSl9IRUlHSFQ9Ijc1Ij4gPC93YWY6d2ViUGFydD4=">
+<param name="Caption" value="包含文件部件">
+</object>
+<div class="nav_banner">
+	<div class="minNav fl">
+		<a class="home" href="http://www.szse.cn/">返回深交所网站首页</a> | 
+		<a href="http://www.szse.cn/main/aboutus/lxwm/index.shtml">联系我们</a> 
+	</div>
+	<div class="logoNav fr">
+		<div class="logo"><img src="/main/template/435/images/logo.jpg"></div>
+	</div>
+</div>
+<div class="nav_ul">
+     <ul>
+      <li ><a href="/main/szhk/">首页</a></li>
+     <li><a href="/main/szhk/ggtywxx/ywtz/" rootid="szhk" parentid="ggtywxx_box" id="szhkggtywxxywtz">深港通业务动态</a></li>
+      <li><a href="/main/szhk/ggtywgz/" rootid="szhk" parentid="ggtywgz_box" id="szhkggtywgzywgz">深港通规则/指南</a></li>
+     <li><a href="/main/szhk/tzzjy/ggttzzjy/ggttzzwd/">深港通投资者教育</a></li>
+          </ul>
+</div-->
+<div class="header">
+
+<link href="/main/template/430/images/sgt.css" rel="stylesheet" type="text/css"> 
+<style> 
+body{ font-size: 12px;}  
+#REPORT_ID_SGT_GGTCJXX{WIDTH: 533px;DISPLAY: block;}        
+</style>
+   
+   
+
+   
+ 
+
+
+<div class="nav_banner">
+	<div class="minNav fl">
+	<a class="home" href="http://www.szse.cn/">返回深交所网站首页</a> | 
+		<a href="http://www.szse.cn/main/aboutus/lxwm/index.shtml">联系我们</a>	</div>
+	<div class="logoNav fr">
+		<div class="logo"><img src="/main/template/435/images/logo.jpg"></div>
+	</div>
+</div>
+<div class="info_ad">
+  <img src="/main/template/435/images/info_ad.jpg">
+ </div>
+ </div> 
+<script src="/szseWeb/common/script/jquery-1.11.3.min.js"></script>
+
+
+
+
+<!--div class="nav_banner">
+	<div class="minNav fl">
+	<a class="home" href="http://www.szse.cn/">返回深交所网站首页</a> | 
+		<a href="http://www.szse.cn/main/aboutus/lxwm/index.shtml">联系我们</a>	</div>
+	<div class="logoNav fr">
+		<div class="logo"><img src="/main/template/433/images/logo.jpg"></div>
+	</div>
+</div>
+<div class="info_ad">
+  <img src="/main/template/433/images/info_ad.jpg">
+ </div-->
+
+<!-- 左菜单 -->
+  <div class="content" style="background:none;">
+
+    <div class="one_row">
+      
+<div class="xx_list">
+          <h4 class="bt">栏目列表</h4>
+             <ul class="xx_ul">
+          <li><a href="/main/szhk/"><b>首页</b></a></li>
+           <li style="cursor:pointer;" id="ggtywxx" onclick="expandFirstItem('ggtywxx_box',this)"><a><b>港股通业务信息</b></a></li>
+           <div class="menu_list" id="ggtywxx_box" parentid="ggtywxx" style="display:none;">
+               <ul>
+                 <li><a href="/main/szhk/ggtywxx/ywtz/" rootid="szhk" parentid="ggtywxx_box" id="szhkggtywxxywtz">业务动态</a></li>
+                 <li><a href="/main/szhk/ggtywxx/bdzqmd/" rootid="szhk" parentid="ggtywxx_box" id="szhkggtywxxbdzqmd">标的证券名单</a></li>
+                  <li><a href="/main/szhk/ggtywxx/bdzqtz/" rootid="szhk" parentid="ggtywxx_box" id="szhkggtywxxbdzqtz">标的证券调整</a></li>
+                <li><a href="/main/szhk/ggtywxx/ckjshl/" rootid="szhk" parentid="ggtywxx_box" id="szhkggtywxxckjshl">参考汇率/结算汇率</a></li>
+                 <li><a href="/main/szhk/ggtywxx/jyrl/" rootid="szhk" parentid="ggtywxx_box" id="szhkggtywxxjyrl">交易日历</a></li>
+                  <li style="background:url(/main/files/2016/11/11/kb2.jpg) no-repeat 0 17px;"><a href="/main/szhk/ggtywxx/ktggthymd/" rootid="szhk" parentid="ggtywxx_box" id="szhkggtywxxktggthymd" style="height:45px;line-height: 20px;">开通港股通业务证券公司<br>及参与人</a></li>
+               </ul>
+            </div>
+            <!--li style="cursor:pointer;" id="sgtywxx" onclick="expandFirstItem('sgtywxx_box',this)"><a><b>深股通业务信息</b></a></li>
+              <div class="menu_list" id="sgtywxx_box" parentid="sgtywxx" style="display:none;">
+               <ul>
+                 <li><a href="/main/szhk/sgtywxx/sgtbdzqmd/" rootid="szhk" parentid="sgtywxx_box" id="szhksgtywxxsgtbdzqmd">标的证券名单</a></li>
+                <li><a href="http://disclosure.szse.cn/m/sgtgg.htm"  rootid="sgt" parentid="sgtywxx_box" name="otherurls" urls="m/sgtgg.htm;m/search6666.jsp">上市公司公告</a></li>
+                 </ul>
+            </div-->
+             <li><a href="/main/szhk/ggtcjxx" rootid="szhk" id="mainszhkggtcjxx" style="color: rgb(255, 0, 0);"><b>港股通成交信息</b></a></li>
+              <!--li><a href="/main/szhk/ggthq" rootid="szhk" id="mainszhkggthq"><b>港股通行情</b></a></li-->
+          <li><a href="/main/szhk/ggtywgz" rootid="szhk" id="mainszhkggtywgz"><b>深港通规则/指南</b></a></li>
+         <li style="cursor:pointer;" id="mainszhktzzjy" onclick="expandFirstItem('szhktzzjy_box',this)"><a><b>深港通投资者教育</b></a></li>
+	          <div class="menu_list" id="szhktzzjy_box" parentid="mainszhktzzjy" style="display:none;">
+	             <ul>
+	                <li onclick="expandSecondItem('szhktzzjyggttzzjy_box',this)" style="cursor: pointer; " id="szhktzzjyggttzzjy" parentid="szhktzzjy_box" class="off"><span style="padding-left:55px">港股通投资者教育</span></li>
+					<div parentid="szhktzzjyggttzzjy" style="display: none;" id="szhktzzjyggttzzjy_box" class="second_box">
+						<ul>
+							<li><a href="/main/szhk/tzzjy/ggttzzjy/ggttzzwd/" parentid="szhktzzjyggttzzjy_box" id="tzzjyggttzzjyggttzzwd" style="cursor:pointer">港股通投资者问答</a></li>
+							<li><a href="/main/szhk/tzzjy/ggttzzjy/ggtfxjy/" parentid="szhktzzjyggttzzjy_box" id="tzzjyggttzzjyggtfxjy" style="cursor:pointer">港股通风险教育</a></li>
+							<li><a href="/main/szhk/tzzjy/ggttzzjy/zlwz/" parentid="szhktzzjyggttzzjy_box" id="tzzjyggttzzjyzlwz" style="cursor:pointer">专栏文章</a></li>
+							<li><a href="/main/szhk/tzzjy/ggttzzjy/ggtzqxy/" parentid="szhktzzjyggttzzjy_box" id="tzzjyggttzzjyggtzqxy" style="cursor:pointer">港股通证券学院</a></li>
+							<li><a href="/main/szhk/tzzjy/ggttzzjy/ggttzzjyhd/" parentid="szhktzzjyggttzzjy_box" id="tzzjyggttzzjyggttzzjyhd" style="cursor:pointer">港股通投资者教育活动</a></li>
+						</ul>
+					</div>
+	               <li onclick="expandSecondItem('szhktzzjysgttzzjy_box',this)" style="cursor: pointer;" id="szhktzzjysgttzzjy" parentid="szhktzzjy_box" class="off"><span style="padding-left:55px">深股通投资者教育</span></li>
+					<div parentid="szhktzzjysgttzzjy" style="display: none;" id="szhktzzjysgttzzjy_box" class="second_box">
+						<ul class="three_menu">
+							<!--li><a href="/main/szhk/tzzjy/sgttzzjy/sgttzzwd/"  parentId="szhktzzjysgttzzjy_box" id="tzzjysgttzzjysgttzzwd" style="cursor:pointer">深股通投资者问答</a></li-->
+							<li><a href="http://www.szse.cn/main/szfw/" onclick="cancelBubble(event)" parentid="szhktzzjysgttzzjy_box" target="_blank" id="tzzjysgttzzjytzzfw" style="cursor:pointer">投资者服务</a></li>
+							<li><a href="/main/szhk/tzzjy/sgttzzjy/sgttzzjyhd/" parentid="szhktzzjysgttzzjy_box" id="tzzjysgttzzjysgttzzjyhd" style="cursor:pointer">深股通投资者教育活动</a></li>
+						</ul>
+					</div>
+	              </ul>
+	          </div>
+                  
+              </ul>
+
+             </div>
+    <script>
+    	function cancelBubble(e){
+    			//阻止冒泡
+		 try
+		{
+			if(e&&e.stopPropagation)
+			{
+				e.stopPropagation();
+			}else
+			{
+				window.event.cancelBubble=true;
+			}
+		}catch(e1){}
+	    	}
+    </script>
+    
+      
+   </div>
+ <!--end 左菜单 -->  
+ <!--列表内容-->
+ <div class="list_row">
+     <!-- 业务通知 -->
+       <div class="main_news border_n main_width">
+   
+  <div class="news_ul">
+  
+<link rel="stylesheet" type="text/css" href="/szseWeb/common/css/table.css?v=3"><link rel="stylesheet" type="text/css" href="/szseWeb/common/css/table_sgt.css?v=3"><link rel="stylesheet" type="text/css" href="/szseWeb/common/datepicker/calendar/calendar.css?v=3"><script language="javascript" src="/szseWeb/common/script/table.js?v=3"></script><script language="javascript" src="/szseWeb/common/datepicker/calendar/calendar.js?v=3"></script><script language="javascript" src="/szseWeb/js-report/report-report_sgt_xml.js?v=3"></script><span id="REPORT_ID"><span id="REPORT_ID_SGT_GGTCJXX"><table cellspacing="1" width="100%" align="center"><tbody><tr><td align="left"><table class="cls-search-table-common cls-search-table" width="100%">
+	  <tbody><tr><td width="6" align="left" valign="top" background="/szseWeb/common/images/search05.gif">
+	     <img src="/szseWeb/common/images/search01.gif" height="6" width="6"></td>
+		 <td rowspan="3"><table border="0"><tbody><tr><td width="2">&nbsp;</td>
+  		<td width="18"><div class="cls_search_class1"></div></td>
+  		<td><span class="cls_search_class2">信息查询</span></td>
+  		<td width="1">&nbsp;</td>
+  		<td width="5"><div class="cls_search_class3"></div></td><td align="left"><span style="margin-left:5px;"></span><input value="2016-12-05" type="text" name="txtDate" id="SGT_GGTCJXX_gid_tab1_con_txtDate" onkeypress="doReportInputboxClick(event,'SGT_GGTCJXX','tab1')" class="cls-datepicker" onblur="blurJD()" onclick="getcalendar(this,'yyyy-mm-dd',event)" onfocus="this.select();" title="格式:YYYY-MM-DD"><input type="text" name="txtIgnore" style="display:none"><span style="margin-left:10px;"><input type="button" id="SGT_GGTCJXX_tab1_btn" value="" class="cls_search_button" onclick="submitSGT_GGTCJXXtab1()"></span></td></tr></tbody></table></td>
+		 <td width="6" align="right" valign="top" background="/szseWeb/common/images/search06.gif"><img src="/szseWeb/common/images/search03.gif" height="6" width="6"></td></tr><tr><td background="/szseWeb/common/images/search05.gif"></td><td background="/szseWeb/common/images/search06.gif"></td></tr><tr><td width="6" align="left" valign="bottom" background="/szseWeb/common/images/search05.gif"><img src="/szseWeb/common/images/search02.gif" height="6" width="6"></td><td width="6" align="right" valign="bottom" background="/szseWeb/common/images/search06.gif"><img src="/szseWeb/common/images/search04.gif" height="6" width="6"></td></tr></tbody></table><table class="cls-title-table-common cls-title-table" bgcolor="#ffffff" width="100%"><tbody><tr class="cls-title-tr"><td align="left" class="cls-title-td"><span class="cls-title">港股通成交日报</span>&nbsp;&nbsp;&nbsp;<span class="cls-subtitle">2016-12-05</span><span id="MESSAGE_ID">&nbsp;</span> </td><td>&nbsp;</td></tr></tbody></table><table class="cls-data-table-detail" id="SGT_GGTCJXXtab1" border="0" cellspacing="1" width="100%" align="center" bgcolor="#E0E0E0"><tbody><tr><td style="background-color:#FFFFFF;padding-left:10px;" align="left" width="70%">当日买入成交金额(亿港元)</td><td bgcolor="white" style="background-color:#FFFFFF;mso-number-format:\@;padding-right:10px;" align="right">9.02</td></tr><tr><td style="background-color:#F8F8F8;padding-left:10px;" align="left" width="70%">当日买入成交笔数(万笔)</td><td bgcolor="white" style="background-color:#F8F8F8;mso-number-format:\@;padding-right:10px;" align="right">3.63</td></tr><tr><td style="background-color:#FFFFFF;padding-left:10px;" align="left" width="70%">当日卖出成交金额(亿港元)</td><td bgcolor="white" style="background-color:#FFFFFF;mso-number-format:\@;padding-right:10px;" align="right">0.21</td></tr><tr><td style="background-color:#F8F8F8;padding-left:10px;" align="left" width="70%">当日卖出成交笔数(万笔)</td><td bgcolor="white" style="background-color:#F8F8F8;mso-number-format:\@;padding-right:10px;" align="right">0.09</td></tr></tbody></table><table class="cls-tab-space" height="20"><tbody><tr><td></td></tr></tbody></table><table class="cls-search-table-common cls-search-table" width="100%">
+	  <tbody><tr><td width="6" align="left" valign="top" background="/szseWeb/common/images/search05.gif">
+	     <img src="/szseWeb/common/images/search01.gif" height="6" width="6"></td>
+		 <td rowspan="3"><table border="0"><tbody><tr><td width="2">&nbsp;</td>
+  		<td width="18"><div class="cls_search_class1"></div></td>
+  		<td><span class="cls_search_class2">信息查询</span></td>
+  		<td width="1">&nbsp;</td>
+  		<td width="5"><div class="cls_search_class3"></div></td><td align="left"><span style="margin-left:5px;"></span><input value="查询月份" type="text" name="txtMonth" id="SGT_GGTCJXX_gid_tab2_con_txtMonth" onkeypress="doReportInputboxClick(event,'SGT_GGTCJXX','tab2')" class="cls-datepicker" onblur="blurJD()" onclick="getcalendar(this,'yyyy-mm',event)" onfocus="this.select();" title="格式:YYYY-MM"><input type="text" name="txtIgnore" style="display:none"><span style="margin-left:10px;"><input type="button" id="SGT_GGTCJXX_tab2_btn" value="" class="cls_search_button" onclick="submitSGT_GGTCJXXtab2()"></span></td></tr></tbody></table></td>
+		 <td width="6" align="right" valign="top" background="/szseWeb/common/images/search06.gif"><img src="/szseWeb/common/images/search03.gif" height="6" width="6"></td></tr><tr><td background="/szseWeb/common/images/search05.gif"></td><td background="/szseWeb/common/images/search06.gif"></td></tr><tr><td width="6" align="left" valign="bottom" background="/szseWeb/common/images/search05.gif"><img src="/szseWeb/common/images/search02.gif" height="6" width="6"></td><td width="6" align="right" valign="bottom" background="/szseWeb/common/images/search06.gif"><img src="/szseWeb/common/images/search04.gif" height="6" width="6"></td></tr></tbody></table><table class="cls-title-table-common cls-title-table" bgcolor="#ffffff" width="100%"><tbody><tr class="cls-title-tr"><td align="left" class="cls-title-td"><span class="cls-title">港股通成交月报</span>&nbsp;&nbsp;&nbsp;<span class="cls-subtitle">2017-01</span><span id="MESSAGE_ID">&nbsp;</span> </td><td>&nbsp;</td></tr></tbody></table><table class="cls-data-table-detail" id="SGT_GGTCJXXtab2" border="0" cellspacing="1" width="100%" align="center" bgcolor="#E0E0E0"><tbody><tr><td style="background-color:#FFFFFF;padding-left:10px;" align="left" width="70%">当月买入成交金额(亿港元)</td><td bgcolor="white" style="background-color:#FFFFFF;mso-number-format:\@;padding-right:10px;" align="right">34.35</td></tr><tr><td style="background-color:#F8F8F8;padding-left:10px;" align="left" width="70%">当月买入成交笔数(万笔)</td><td bgcolor="white" style="background-color:#F8F8F8;mso-number-format:\@;padding-right:10px;" align="right">9.10</td></tr><tr><td style="background-color:#FFFFFF;padding-left:10px;" align="left" width="70%">当月卖出成交金额(亿港元)</td><td bgcolor="white" style="background-color:#FFFFFF;mso-number-format:\@;padding-right:10px;" align="right">9.33</td></tr><tr><td style="background-color:#F8F8F8;padding-left:10px;" align="left" width="70%">当月卖出成交笔数(万笔)</td><td bgcolor="white" style="background-color:#F8F8F8;mso-number-format:\@;padding-right:10px;" align="right">2.46</td></tr><tr><td style="background-color:#FFFFFF;padding-left:10px;" align="left" width="70%">当月日均买入成交金额(亿港元)</td><td bgcolor="white" style="background-color:#FFFFFF;mso-number-format:\@;padding-right:10px;" align="right">3.82</td></tr><tr><td style="background-color:#F8F8F8;padding-left:10px;" align="left" width="70%">当月日均买入成交笔数(万笔)</td><td bgcolor="white" style="background-color:#F8F8F8;mso-number-format:\@;padding-right:10px;" align="right">1.01</td></tr><tr><td style="background-color:#FFFFFF;padding-left:10px;" align="left" width="70%">当月日均卖出成交金额(亿港元)</td><td bgcolor="white" style="background-color:#FFFFFF;mso-number-format:\@;padding-right:10px;" align="right">1.04</td></tr><tr><td style="background-color:#F8F8F8;padding-left:10px;" align="left" width="70%">当月日均卖出成交笔数(万笔)</td><td bgcolor="white" style="background-color:#F8F8F8;mso-number-format:\@;padding-right:10px;" align="right">0.27</td></tr></tbody></table><table class="cls-tab-space" height="20"><tbody><tr><td></td></tr></tbody></table><table class="cls-search-table-common cls-search-table" width="100%">
+	  <tbody><tr><td width="6" align="left" valign="top" background="/szseWeb/common/images/search05.gif">
+	     <img src="/szseWeb/common/images/search01.gif" height="6" width="6"></td>
+		 <td rowspan="3"><table border="0"><tbody><tr><td width="2">&nbsp;</td>
+  		<td width="18"><div class="cls_search_class1"></div></td>
+  		<td><span class="cls_search_class2">信息查询</span></td>
+  		<td width="1">&nbsp;</td>
+  		<td width="5"><div class="cls_search_class3"></div></td><td align="left"><span style="margin-left:5px;"></span><select name="selectNf" id="SGT_GGTCJXX_gid_tab3_con_selectNf" class="cls-selectbox" onkeypress="doReportInputboxClick(event,'SGT_GGTCJXX','tab3')" title="年份"><option value="2017">2017</option><option value="2016">2016</option></select><input type="text" name="txtIgnore" style="display:none"><span style="margin-left:10px;"><input type="button" id="SGT_GGTCJXX_tab3_btn" value="" class="cls_search_button" onclick="submitSGT_GGTCJXXtab3()"></span></td></tr></tbody></table></td>
+		 <td width="6" align="right" valign="top" background="/szseWeb/common/images/search06.gif"><img src="/szseWeb/common/images/search03.gif" height="6" width="6"></td></tr><tr><td background="/szseWeb/common/images/search05.gif"></td><td background="/szseWeb/common/images/search06.gif"></td></tr><tr><td width="6" align="left" valign="bottom" background="/szseWeb/common/images/search05.gif"><img src="/szseWeb/common/images/search02.gif" height="6" width="6"></td><td width="6" align="right" valign="bottom" background="/szseWeb/common/images/search06.gif"><img src="/szseWeb/common/images/search04.gif" height="6" width="6"></td></tr></tbody></table><table class="cls-title-table-common cls-title-table" bgcolor="#ffffff" width="100%"><tbody><tr class="cls-title-tr"><td align="left" class="cls-title-td"><span class="cls-title">港股通成交年报</span>&nbsp;&nbsp;&nbsp;<span class="cls-subtitle">2017年</span><span id="MESSAGE_ID">&nbsp;</span> </td><td>&nbsp;</td></tr></tbody></table><table class="cls-data-table-detail" id="SGT_GGTCJXXtab3" border="0" cellspacing="1" width="100%" align="center" bgcolor="#E0E0E0"><tbody><tr><td style="background-color:#FFFFFF;padding-left:10px;" align="left" width="70%">当年买入成交金额(亿港元)</td><td bgcolor="white" style="background-color:#FFFFFF;mso-number-format:\@;padding-right:10px;" align="right">34.35</td></tr><tr><td style="background-color:#F8F8F8;padding-left:10px;" align="left" width="70%">当年买入成交笔数(万笔)</td><td bgcolor="white" style="background-color:#F8F8F8;mso-number-format:\@;padding-right:10px;" align="right">9.10</td></tr><tr><td style="background-color:#FFFFFF;padding-left:10px;" align="left" width="70%">当年卖出成交金额(亿港元)</td><td bgcolor="white" style="background-color:#FFFFFF;mso-number-format:\@;padding-right:10px;" align="right">9.33</td></tr><tr><td style="background-color:#F8F8F8;padding-left:10px;" align="left" width="70%">当年卖出成交笔数(万笔)</td><td bgcolor="white" style="background-color:#F8F8F8;mso-number-format:\@;padding-right:10px;" align="right">2.46</td></tr><tr><td style="background-color:#FFFFFF;padding-left:10px;" align="left" width="70%">当年日均买入成交金额(亿港元)</td><td bgcolor="white" style="background-color:#FFFFFF;mso-number-format:\@;padding-right:10px;" align="right">3.82</td></tr><tr><td style="background-color:#F8F8F8;padding-left:10px;" align="left" width="70%">当年日均买入成交笔数(万笔)</td><td bgcolor="white" style="background-color:#F8F8F8;mso-number-format:\@;padding-right:10px;" align="right">1.01</td></tr><tr><td style="background-color:#FFFFFF;padding-left:10px;" align="left" width="70%">当年日均卖出成交金额(亿港元)</td><td bgcolor="white" style="background-color:#FFFFFF;mso-number-format:\@;padding-right:10px;" align="right">1.04</td></tr><tr><td style="background-color:#F8F8F8;padding-left:10px;" align="left" width="70%">当年日均卖出成交笔数(万笔)</td><td bgcolor="white" style="background-color:#F8F8F8;mso-number-format:\@;padding-right:10px;" align="right">0.27</td></tr></tbody></table></td></tr></tbody></table><span style="display:none" id="szseWebReport_pageinfo_SGT_GGTCJXX" catalogid="SGT_GGTCJXX" tabkeys="tab1;tab2;tab3;" report_action="search" url="/szseWeb/FrontController.szse?ACTIONID=7&amp;AJAX=AJAX-TRUE&amp;CATALOGID=SGT_GGTCJXX&amp;txtDate=2016-12-05&amp;TABKEY=tab1"></span>
+</span></span>
+
+<p>
+  
+</p></div>
+     </div>
+       <!-- end业务通知 -->
+ </div>
+ <!--end列表内容-->
+ <div class="clear"></div>
+<div class="footer">
+    <div class="f_auto">
+           <span>深圳证券交易所 版权所有 ©<samp>2013 Shenzhen Stock Exchange. All Rights Reserved</samp></span><br>
+      [<a class="bs" href="http://www.miitbeian.gov.cn">粤ICP备05012689号</a> (建议使用IE6.0以上浏览器，1024x768以上分辨率)]<span class="pl"><a href="http://www.sznet110.gov.cn/netalarm/index.jsp"><img src="/main/template/431/images/wa02.gif" width="27" height="32" border="0" style="vertical-align:middle"></a> <a href="http://www.sznet110.gov.cn/webrecord/innernet/Welcome.jsp?bano=4403201010119"><img src="/main/template/431/images/wa01.gif" width="27" height="32" border="0" style="vertical-align:middle"></a></span> </div>
+  </div>
+</div>
+<script src="/common/script/default.js"></script>
+<script src="/szseWeb/common/script/sgt_treeMenu.js"></script>
+<script src="/szseWeb/common/script/treeMenu.js"></script>
+<script type="text/javascript" for="window" event="onload">  
+	<!--
+		try{
+			selectMenuItem();
+		}catch(e){}
+		try{
+			init()
+		}catch(e){}
+		try{
+			initHq();
+		}catch(e){}
+		
+		if(self!=top){top.location.href=self.location.href;}
+	//-->
+</script>
+
+
+</div>
+
+
+
+</body></html>
