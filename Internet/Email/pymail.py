@@ -23,12 +23,44 @@ def splitAddrs(field):
 	return [email.utils.formataddr(pair) for pair in pairs]
 
 def inputMessage():
-	pass
+	import sys
+	From = input('From? ').strip()
+	To = input('To? ').strip()
+	To = splitAddrs(To)
+	Subj = input('Title of the Email:').strip()
+	print('Type message text, end with line="."')
+	text = ''
+	while True:
+		line = sys.stdin.readline()
+		if line == '.\n':
+			break
+		text += line
+	return From, To, Subj, text
 
-def sendMessage():
-	pass
+def sendMessage(serverName, user, passwd):
+	From, To, Subj, text = inputMessage()
+	msg = Message()
+	msg['From'] = From
+	msg['To'] = ', '.join(To)
+	msg['Subject'] = Subj
+	msg['Date'] = email.utils.formatdate()
+	msg.set_payload(text)
+	server = sendConnect(serverName, user, passwd)
+	try:
+		sendFailed = server.send_message(msg)
+	except:
+		print('Error - send failed')
+	else:
+		if sendFailed:
+			print('Failed:',sendFailed)
 
-def connect(serverName, user, passwd):
+def sendConnect(serverName, user, passwd):
+	print('Connecting server:',serverName)
+	server = smtplib.SMTP(serverName)
+	server.login(user, passwd)
+	return server
+
+def fetchConnect(serverName, user, passwd):
 	print('Connecting to "%s"'%serverName)
 	server = poplib.POP3(serverName)
 	server.user(user)
@@ -37,7 +69,7 @@ def connect(serverName, user, passwd):
 	return server
 
 def loadMessages(serverName, user, passwd, loadStartIdx=1):
-	server = connect(serverName, user, passwd)
+	server = fecthConnect(serverName, user, passwd)
 	try:
 		msgCount, msgTotalBytes = server.stat()
 		print('There are', msgCount,'messages, total bytes:',msgTotalBytes)
@@ -59,10 +91,19 @@ def deleteMessages(serverName, user, passwd, toDelete, verify=True):
 	pass
 
 def showIndex(msgList, i):
-	pass
+	totalNum = len(msgList)
+	for n in range(totalNum - i,totalNum):
+		print('[%d]'%n+'-'*50)
+		for hdr in ('From','To','Date','Subject'):
+			try:
+				print('\t%-8s=>%s'%(hdr, msgList[n][hdr]))
+			except KeyError:
+				print('\t-8s=>(unknown)'%hdr)
+
+		
 
 def showMessage(msgList, i):
-	pass
+	
 
 def saveMessage(i, mailFile, msgList):
 	pass
