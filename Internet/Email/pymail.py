@@ -1,6 +1,8 @@
-import poplib, smtplib, email.utils
+import poplib, smtplib, email.utils, sys
+import re
 from email.parser import Parser, BytesParser
 from email.message import Message
+import email
 fetchEncoding = 'utf8'
 
 helpText='''
@@ -13,9 +15,8 @@ m		- compose and sent a new mail message
 q		- quit pymail
 ?		- display this help text
 '''
-def formatToMessage(messageBytes):
-	content = b'/n'.join(messageBytes)
-	msg = BytesParser().parsebytes(content)
+def formatToMessage(bytesList):
+	msg = [email.message_from_bytes(mByte) for mByte in bytesList] 
 	return msg
 
 def splitAddrs(field):
@@ -68,23 +69,25 @@ def fetchConnect(serverName, user, passwd):
 	print(server.getwelcome())
 	return server
 
-def loadMessages(serverName, user, passwd, loadStartIdx=1):
-	server = fecthConnect(serverName, user, passwd)
+def loadMessages(serverName, user, passwd, newerNum=10):
+	
+	server = fetchConnect(serverName, user, passwd)
 	try:
 		msgCount, msgTotalBytes = server.stat()
+		newerNum = msgCount if newerNum < 0 else newerNum
 		print('There are', msgCount,'messages, total bytes:',msgTotalBytes)
 		print('Retrieving...')
 		msgList = []
-		for i in range(loadStartIdx, msgCount+1):
+		for i in range(msgCount - newerNum + 1, msgCount+1):
 			hdr, msgByteLines, octets = server.retr(i)
-			msg = formatToMessage(msgByteLines)
-			msgList.append(msg)
+			msgList.append(b'\n'.join(msgByteLines))
 	except:
 		print('Error happened in loading messages')
 		print(sys.exc_info[0],sys.exc_info[1])
 	finally:
 		server.quit()
-	assert len(msgList) == (msgCount - loadStartIdx + 1)
+	assert len(msgList) == newerNum
+	msgList = formatToMessage(msgList)
 	return msgList
 
 def deleteMessages(serverName, user, passwd, toDelete, verify=True):
@@ -92,18 +95,32 @@ def deleteMessages(serverName, user, passwd, toDelete, verify=True):
 
 def showIndex(msgList, i):
 	totalNum = len(msgList)
+	i = totalNum if i < 0 else i
 	for n in range(totalNum - i,totalNum):
 		print('[%d]'%n+'-'*50)
 		for hdr in ('From','To','Date','Subject'):
 			try:
 				print('\t%-8s=>%s'%(hdr, msgList[n][hdr]))
 			except KeyError:
-				print('\t-8s=>(unknown)'%hdr)
+				print('\t%-8s=>(unknown)'%hdr)
 
 		
 
 def showMessage(msgList, i):
-	
+	totalNum = len(msgList)
+	i = totalNum if i<0 else i
+	pattern = re.compile(r'charset="(.+)"')
+	for n in range(totalNum - i, totalNum):
+		print('[%d]'%n + '-'*50)
+		for hdr in ('From','To','Date','Subject'):
+			try:
+				print('\t%-8s=>%s'%(hdr, msgList[n][hdr]))
+			except KeyError:
+				print('\t%-8s=>(unknown)'%hdr)
+			for w in msgList[n].walk():
+				if w.get_content_type() == 'text/plain':
+					charSet = re.search(pattern, w['Content-Type']).group(1)
+					print(w.get_payload(decode=True).decode(charSet))
 
 def saveMessage(i, mailFile, msgList):
 	pass
@@ -114,3 +131,53 @@ def msgNum(command):
 	except:
 		return -1
 
+def interact(msgList, saveDir, serverName, user, passwd):
+	showIndex(msgList, 10)
+	toDelete = []
+	print(helpText)
+	while True:
+		try:
+			command = input('[Pymail] Action? (i, l, d, s, m, q, ?) ')
+		except EOFError:
+			command = 'q'
+		#quit
+		if command[0] == 'q':
+			break
+		#index
+		elif command[0] == 'i':
+			showIndex(msgList, msgNum(command))
+		#show list
+		elif command[0] == 'l':
+			showMessage(msgList, msgNum(command))
+		#save
+		elif command[0] == 's':
+			pass
+
+		#delete:
+		elif command[0] == 'd':
+			pass
+
+		#mail
+		elif command[0] == 'm':
+			sendMessage(serverName, user, passwd)
+
+		#helpText
+		elif command[0] == '?':
+			print(helpText)
+		else:
+			print('What? --type "?" for commands help')
+	return toDelete
+	
+if __name__ == '__main__':
+	import getpass
+	saveDir = 'savemail/'
+	retrServer = 'pop.yeah.net'
+	sendServer = 'smtp.yeah.net'
+	user = 'jason_wujiakun@yeah.net'
+	print('Password to login[%s]'%user)
+	passwd = getpass.getpass()
+	msgList = loadMessages(retrServer, user, passwd)
+	toDelete = interact(msgList,saveDir,sendServer,user,passwd)
+	if toDelete:
+		deleteMessages(retrServer, user, passwd, toDelete)
+	print('Bye')
