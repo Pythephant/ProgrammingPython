@@ -1,6 +1,8 @@
 import poplib, sys
 from .mailParser import MailParser
 from .mailTool import MailTool, SilentMailTool
+#global configure
+FETCHLIMIT = None
 
 #index/server msgnum out of synch test
 class DeleteSynchError(Exception):
@@ -77,13 +79,68 @@ class MailFetcher(MailTool):
 		return '\n'.join(msgLines)
 
 	def downloadAllHeaders(self, process=None, loadfrom=1):
-		pass
+		if self.srvHasTop is False:
+			return self.downloadAllMessages(process=porcess, loadfrom=loadfrom)
+		else:
+			self.trace('downloading headers...')
+			fetchlimit = FETCHLIMIT
+			server = self.connect()
+			try:
+				resp, msginfos, respsz = server.list()
+				msgCounts = len(msginfos)
+				msgSizes = [int(msginfo.split()[1]) for msginfo in msginfos]
+				msgHdrs = []
+				for i in range(loadfrom, msgCounts+1):
+					if process:
+						process(i, msgCounts)
+					if fetchlimit and (i<=msgCounts-fetchlimit):
+						hdrtext = 'Subject: -- mail skipped --\n\n'
+						msgHdrs.append(hdrtext)
+					else:
+						resp, hdrBytes, respsz = server.top(i, 0)
+						hdrlines = self.decodeFullText(hdrBytes)
+						msgHdrs.append('\n'.join(hdrlines))
+			finally:
+				server.quit()
+			assert len(msgSizes) == len(msgHdrs)
+			self.trace('load headers exit')
+			return msgHdrs, msgSizes, False
 
 	def downloadAllMessages(self, process=None, loadfrom=1):
-		pass
+		self.trace('loading messages...')
+		fetchlimit = FETCHLIMIT
+		server = self.connect()
+		try:
+			(msgCounts, allBytes) = server.stat()
+			msgTexts = []
+			msgSizes = []
+			if i in range(loadfrom, msgCounts+1):
+				if process:
+					process(i, msgCounts)
+				if fetchlimit and (i<= msgCounts-fetchlimit):
+					mailtext = 'Subject: -- skipped mail--\n\n skipped mail\n'
+					msgTexts.append(mailtext)
+					msgSizes.append(len(mailtext))
+				else:
+					(resp, msgBytes, respsz) = server.retr(i)
+					msglines = self.decodeFullText(msgBytes)
+					msgTexts.append('\n'.join(msglines))
+					msgSizes.append(respsz)
+		finally:
+			server.quit()
+		assert len(msgTexts) == msgCounts - loadfrom + 1
+		return msgTexts, msgSizes, True
 
-	def deleteMessages(self, msgNums, progess=None):
-		pass
+	def deleteMessages(self, msgNumList, progess=None):
+		self.trace('deleting mails...')
+		server = self.connect()
+		try:
+			for (ix, msgNum) in enumerate(msgNumList):
+				if process:
+					process(ix+1, len(msgNumList))
+				server.dele(msgNum)
+		finally:
+			server.quit()
 
 	def deleteMessagesSafely(self, msgNums, synchHeaders, process=None):
 		pass
