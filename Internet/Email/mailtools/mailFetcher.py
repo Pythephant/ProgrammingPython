@@ -143,13 +143,74 @@ class MailFetcher(MailTool):
 			server.quit()
 
 	def deleteMessagesSafely(self, msgNums, synchHeaders, process=None):
-		pass
+		if not self.srvHasTop:
+			raise TopNotSupported('Safe delete cancelled')
+		self.trace('deleting mail safely')
+		errmsg = 'Message %s out of synch with server.\n'
+		errmsg += 'Delete terminated at this message.\n'
+		errmsg += 'Mail client may required restart or reload.'
+
+		server = self.connect()
+		try:
+			msgCount, msgBytes = server.stat()
+			for (ix, msgnum) in enumerate(msgNums):
+				if process:
+					process(ix+1, len(msgNums))
+					if msgnum > msgCount:
+						raise DeleteSychError(errmsg%msgnum)
+					resp, hdrlines, respsz = server.top(msgnum,0)
+					hdrlines = self.decodeFullText(hdrlines)
+					msghdrs = '\n'.join(hdrlines)
+					if self.headersMatch(msghdrs, synchHeaders[msgnum-1]) is False:
+						raise DeleteSynchError(errmsg%msgnum)
+					else:
+						server.dele(msgnum)
+		finally:
+			server.quit()
 	
 	def checkSynchError(self, synchHeaders):
-		pass
+		self.trace('synch check...')
+		errormsg = 'Message index out of synch with mail server.\n'
+		errormsg += 'Mail client may restart or reload.'
+		server = self.connect()
+		try:
+			lastmsgnum = len(synchHeaders)
+			(msgCount, msgBytes) = server.stat()
+			if lastmsgnum > msgCount:
+				raise MessageSynchError(errormsg)
+			if self.srvHasTop:
+				resp, hdrlines, respz = server.top(latmsgnum,0)
+				hdrlines = self.decodeFullText(hdrlines)
+				lastmsghdrs = '\n'.join(hdrlines)
+				if self.headersMatch(lastmsghdrs, synchHeaders[-1]):
+					raise MessageSynchError(errormsg)
+		finally:
+			server.quit()
 
 	def headersMatch(self, hdrtext1, hdrtext2):
-		pass
+		if hdrtext1 == hdrtext2:
+			return True
+
+		split1 = hdrtext1.splitlines()
+		split2 = hdrtext2.splitlines()
+		strip1 = [line for line in split1 if not line.startswith('Status:')]
+		strip2 = [line for line in split2 if not line.startswith('Status:')]
+		if strip1 == strip2:
+			return True
+
+		msgid1 = [line for line in split1 if line[:11].lower() == 'message-id:']
+		msgid2 = [line for line in split2 if line[:11].lower() == 'message-id:']
+		if (msgid1 or msgid2) and (msgid1 != msgid2):
+			return False
+
+		tryheaders = ('From','To','Subject','Date')
+		tryheaders += ('Cc','Return-Path','Received')
+		msg1 = MailParser().parseHeaders(hdrtext1)
+		msg2 = MailParser().parseHeaders(hdrtext2)
+		for hdr in tryheaders:
+			if msg1.get_all(hdr) != msg2.get_all(hdr):
+				return False
+		return True
 
 	def getPassword(self):
 		if not self.popPassword:
